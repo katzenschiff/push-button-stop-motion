@@ -16,7 +16,7 @@ Bevor Du den Pi hochfährst, musst du die Kamera anschließen.
 
 ![Connect the camera](images/connect-camera.jpg)
 
-## Tests die Kamera
+## Teste die Kamera
 
 1. Öffne ein Terminalfenster und tippe folgendes Kommando ein:
 
@@ -83,53 +83,47 @@ Bevor Du den Pi hochfährst, musst du die Kamera anschließen.
 
 ## Füge ein Tastatursignal hinzu
 
-1. Using your breadboard and jumper leads, connect the Pi to the button as shown in the diagram below:
-
-    ![](images/picamera-gpio-setup.png)
-
-1. Import `Button` from the `gpiozero` module at the top of the code, create up a `Button` connected to pin 17, and change the `sleep` line to use `button.wait_for_press` like so:
+1. Ändere den `sleep`Befehl so, daß das Programm auf einen Tastendruck wartet:
 
     ```python
     from picamera import PiCamera
     from time import sleep
-    from gpiozero import Button
 
-    button = Button(17)
     camera = PiCamera()
 
     camera.start_preview()
-    button.wait_for_press()
+    input("Drücke eine Taste...")
     camera.capture('/home/pi/image3.jpg')
     camera.stop_preview()
     ```
 
-1. Save and run your script.
+1. Speichere dein Skript und lass es laufen.
 
-1. Once the preview has started, press the button connected to your Pi to capture an image.
+1. Wenn die Vorschau begonnen hat, drücke eine Taste, um ein Bild zu machen.
 
-1. Return to the file manager window and you should see your `image3.jpg`. Again, double-click to view.
+1. Gehe zurück zum Dateimanager und suche nach dem Bild `image3.jpg`. Doppelklicke es zum Ansehen.
 
-## Take a selfie
+## Mach ein Selfie.
 
-If you want to take a photograph of yourself with the camera board, you are going to have to add in a delay to enable you to get into position. You can do this by modifying your program.
+Wenn Du ein Selfie machen willst, brauchst du noch eine Verzögerung, damit Du dich in Position bringen kannst. Das fügst du so zu deinem Skript hinzu:
 
-1. Add a line to your code to tell the program to sleep briefly before capturing an image, as below:
+1. Füge eine Zeile hinzu, die das Programm anweist, kurz zu warten:
 
     ```python
     camera.start_preview()
-    button.wait_for_press()
+    input("Drücke eine Taste...")
     sleep(3)
     camera.capture('/home/pi/Desktop/image3.jpg')
     camera.stop_preview()
     ```
 
-1. Save and run your script.
+1. Speichere das SKript und lass es laufen.
 
-1. Press the button and try to take a selfie. Be sure to keep the camera still! Ideally, it should be mounted in position.
+1. Drück eine Taste und mache ein Selfie.
 
-1. Again, feel free to check the image in the file manager. You can run the program again to take another selfie.
+1. Du kannst das Bild wieder durch Doppelklicken ansehen.
 
-## Stop motion animation
+## Stop-Motion Animation
 
 Now that you have successfully taken individual photographs with your camera, it's time to try combining a series of still images to make a stop motion animation.
 
