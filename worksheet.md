@@ -1,36 +1,36 @@
-# Push Button Stop Motion
+# Sop Motion Film
 
-Make your own stop motion animation video with a push button controller, using Python and GPIO Zero.
+Drehe deinen eigenen Stop-Motion-Film mit dem Raspberry Pi.
 
-You can use LEGO to animate a tower being built, figures acting out a scene, or anything else you can think of!
+Du kannst Lego dazu benutzen um den Bau eines Turms zu filmen, oder einen Kampf zwischen den Figuren - was du willst.
 
-## Connect the camera
+## Schließe die Kamera an
 
-Before booting your Pi, you'll need to connect the camera.
+Bevor Du den Pi hochfährst, musst du die Kamera anschließen.
 
-1. Locate the camera port next to the Ethernet port. Lift the tab on the top.
+1. Neben dem Ethernet Port ist der Kameraport. Lockere den Verschluß.
 
-1. Place the strip in the connector, with the blue side facing the Ethernet port. While holding the strip in place, push down the tab.
+1. Stecke den Streifen in den Port, mit der blauen Seite zum Ethernet port. Halte den Streifen fest und schiebe den Verschluss zu.
 
-1. Turn the power on to boot the Pi.
+1. Schließe den Strom an und fahre den Pi hoch.
 
 ![Connect the camera](images/connect-camera.jpg)
 
-## Test the camera
+## Tests die Kamera
 
-1. Open a terminal window from the application menu. Enter the following command:
+1. Öffne ein Terminalfenster und tippe folgendes Kommando ein:
 
     ```bash
     raspistill -k
     ```
 
-1. You should see a preview appear on the screen. It doesn't matter if the picture is upside-down; you can configure this later. Press `Ctrl + C` to exit the preview.
+1. Du solltest ein Vorschaubild auf dem Bildschirm sehen. Es ist egal ob es auf dem Kopf steht. Drücke `Strg + C` um die VOrschau zu verlassen.
 
-1. Run the command `ls` to see the files in your home directory; you should see `image1.jpg` listed.
+1. Gib 'ls' ein um die die Dateien in deinem Homeverzeichnis anzeigen zu lassen. Du solltest ein Bild 'image1.jpg' dort sehen. 
 
-1. Click the file manager icon in the taskbar and you should see some folders and files. Double-click `image1.jpg` to preview it.
+1. Klicke auf den Dateimanager und finde das Bild darin. Doppelklicke auf `image1.jpg` um es anzusehen.
 
-## Take a picture with Python
+## Nimm ein Bild auf mit Python
 
 1. Open **Python 3 (IDLE)** from the main menu:
 
