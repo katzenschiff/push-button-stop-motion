@@ -1,4 +1,4 @@
-# Sop Motion Film
+# Stop Motion Film
 
 Drehe deinen eigenen Stop-Motion-Film mit dem Raspberry Pi.
 
@@ -32,13 +32,13 @@ Bevor Du den Pi hochfährst, musst du die Kamera anschließen.
 
 ## Nimm ein Bild auf mit Python
 
-1. Open **Python 3 (IDLE)** from the main menu:
+1. Öffne **Python 3 (IDLE)**aus dem Hauptmenu:
 
     ![Open Python 3](images/python3-app-menu.png)
 
-1. Select `File > New Window` from the menu to open a Python file editor.
+1. Wähle `File > New Window` aus dem Menu, um einen Python Editor zu starten.
 
-1. Carefully enter the following code into the new window (case is important!):
+1. Gib die folgenden Zeilen ein (auf Groß- und Kleinschreibung achten!):
 
     ```python
     from picamera import PiCamera
@@ -52,19 +52,19 @@ Bevor Du den Pi hochfährst, musst du die Kamera anschließen.
     camera.stop_preview()
     ```
 
-1. Select `File > Save` from the menu (or press `Ctrl + S`) and save as `animation.py`.
+1. Wähle `File > Save` aus dem Menü und speichere die Datei als `animation.py`.
 
-1. Press `F5` to run the script.
+1. Drücke `F5`, um das Skript zu starten.
 
-1. You should see `image.jpg` saved on your Desktop. Double-click the icon to open the image.
+1. Du solltest eine Datei `image.jpg` auf dem Desktop finden. Doppelklicke sie, um das Bild zu öffnen.
 
-1. If the picture is upside-down you can either reposition your camera using a mount, or leave it as it is and tell Python to flip the image. To do this, add the following lines:
+1. Wenn das Bild verkehrtherum ist, kannst du entweder die Kamera umdrehen, oder Python das Bild drehen lassen. Dafür gib die folgenden Zeilen 
 
     ```python
     camera.rotation = 180
     ```
 
-    after `camera = PiCamera()`, so it becomes:
+    hinter `camera = PiCamera()` ein, so dass dein Programm so aussieht:
 
     ```python
     from picamera import PiCamera
@@ -79,9 +79,9 @@ Bevor Du den Pi hochfährst, musst du die Kamera anschließen.
     camera.stop_preview()
     ```
 
-1. Run the file again and it will overwrite `image2.jpg` with a new image in the correct orientation. Remember to keep these lines in your code while you alter it in the next few steps.
+1. Lass das SKript noch einmal laufen und es wird `image2.jpg` mit einem neuen Bild in korrekter AUsrichtugn überschreiben. Lass diese Zeilen im Skript, wenn Du weiterarbeitest.
 
-## Connect a hardware button
+## Füge ein Tastatursignal hinzu
 
 1. Using your breadboard and jumper leads, connect the Pi to the button as shown in the diagram below:
 
